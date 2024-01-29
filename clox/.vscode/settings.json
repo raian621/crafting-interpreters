@@ -1,0 +1,8 @@
+{
+    "C_Cpp.default.includePath": ["include"],
+    "C_Cpp.autoAddFileAssociations": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.rulers": [72, 80, 100]
+}
