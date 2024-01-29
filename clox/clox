@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+read -d '\n' USAGE << EndOfText
+Usage ./clox [rebuild]
+ARGS:
+   rebuild: force build clox from source
+EndOfText
+
+if [[ $1 == "help" ]]; then
+  echo "${USAGE}"
+  exit 0
+fi
+
+TARGET=./bin/clox
+
+if ! [ -f $TARGET ]; then
+  echo "Executable '$TARGET' not found, building '$TARGET' from source..."
+  ./build.sh
+elif [[ $1 == "rebuild" ]]; then
+  echo "Rebuilding '$TARGET' from source..."
+  ./build.sh
+fi
+
+./bin/clox
